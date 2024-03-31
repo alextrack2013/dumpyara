@@ -237,6 +237,9 @@ if python3 -c "import aospdtgen"; then
     fi
 fi
 
+# Remove symlinks
+find "${PROJECT_DIR}/working/${UNZIP_DIR}" -type l -delete
+
 # copy file names
 chown "$(whoami)" ./* -R
 chmod -R u+rwX ./* #ensure final permissions
